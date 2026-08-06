@@ -13,4 +13,17 @@ def on_press (key):
             sys.stdout.write("\t")
         elif key == keyboard.Key.space:
             sys.stdout.write(" ")
-        elif
+        elif key == keyboard.Key.backspace:
+            sys.stdout.write("\b \b")
+        sys.stdout.flush()
+
+def on_release(key):
+    if key == keyboard.Key.esc:
+        print("\n Escaping the keylogger")
+
+print("Keylogger start")
+print("press esc to escape\n")
+
+with keyboard.Listener(on_press=on_press, on_release=on_release) as listener:
+    listener.join()
+    
